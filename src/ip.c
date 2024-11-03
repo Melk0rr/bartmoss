@@ -3,9 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-ip *createIPAddressFromBytes(unsigned char b1, unsigned char b2, unsigned char b3, unsigned char b4)
+struct ipv4base *createIPAddressFromBytes(unsigned char b1, unsigned char b2, unsigned char b3, unsigned char b4)
 {
-  ip *newIP = malloc(sizeof(*newIP));
+  struct ipv4base *newIP = malloc(sizeof(*newIP));
 
   if (newIP == NULL)
   {
@@ -21,7 +21,13 @@ ip *createIPAddressFromBytes(unsigned char b1, unsigned char b2, unsigned char b
   return newIP;
 }
 
-void printIP(ip *addr)
+void printIP(ipv4 *ip)
 {
-  printf("%u.%u.%u.%u\n", addr->bytes[0], addr->bytes[1], addr->bytes[2], addr->bytes[3]);
+  printf(
+    "%u.%u.%u.%u\n",
+    ip->address->bytes[0],
+    ip->address->bytes[1],
+    ip->address->bytes[2],
+    ip->address->bytes[3]
+  );
 }
