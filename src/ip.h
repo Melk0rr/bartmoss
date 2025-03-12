@@ -3,11 +3,10 @@
 
 /**
  * @brief Base IPv4
- * 
+ * INFO: A struct to handle ipv4
  */
 typedef struct ipv4
 {
-  // IP address bytes
   unsigned char bytes[4];
 } ipv4;
 
@@ -24,7 +23,7 @@ typedef struct ipv4mask
 
 /**
  * @brief Prints ip address
- * 
+ *
  * @param addr {ip} : ip to print
  */
 void printIP(ipv4 *ip);
